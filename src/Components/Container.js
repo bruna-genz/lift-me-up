@@ -1,39 +1,43 @@
 import React from 'react'
-import Phrase from './Phrase'
+import Quote from './Quote'
 import Button from './Button'
 
 class Container extends React.Component {
     constructor() {
         super()
         this.state = {
-            phrases: "",
-            index: 0
+            quotes: "",
+            currentQuote: "Lift me up!",
+            currentAuthor: "by Bruna Genz"
         }
-        this.getPhrases = this.getPhrases.bind(this)
+        this.getQuotes = this.getQuotes.bind(this)
     }
 
-    async getPhrases() {
-        if (!this.state.phrases) {
-            const result = await fetch("https://type.fit/api/quotes")
+    async getQuotes() {
+        if (!this.state.quotes) {
+            const rawResult = await fetch("https://quotes-api-bruna.herokuapp.com/quotes")
+            const result = await rawResult.json()
             this.setState({
-                phrases: result.json()
+                quotes: result
             }) 
         }
+
+        let index = Math.floor(Math.random() * this.state.quotes.length)
         
         this.setState({
-            index: Math.floor(Math.random() * this.state.phrases.length)
+            currentQuote: `"${this.state.quotes[index].quote}"`,
+            currentAuthor: this.state.quotes[index].author
         })
-
-        console.log("clicked")
-        console.log(this.state.phrases)
-        console.log(this.state.index)
     }
 
     render() {
         return (
             <div className="container">
-                < Phrase />
-                < Button onClick={this.getPhrases}/>
+                < Quote 
+                    quote={ this.state.currentQuote } 
+                    author={ this.state.currentAuthor } 
+                />
+                < Button onClick={this.getQuotes}/>
             </div>
         )
     }
