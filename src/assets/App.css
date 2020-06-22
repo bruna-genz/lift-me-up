@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=The+Girl+Next+Door&display=swap');
 
+#root {
+  height: 100%;
+}
+
 .App {
   width: 60%;
   min-width: 500px;
-  min-height: 750px;
-  
-
+  height: 95%;
   margin: 4% auto;
   display: flex;
   justify-content: center;
@@ -50,4 +52,28 @@
 .Quote h2 {
   font-size: 21px;
   text-align: end;
+}
+
+/****
+* Mobile
+***/
+
+@media only screen and (max-width: 500px) {
+  .App {
+    min-width: 340px;
+  }
+
+  .Quote {
+    width: 300px;
+    padding-top: 20px;
+  }
+
+  .Quote h1 {
+    font-size: 30px;
+  }
+  
+  .Quote h2 {
+    font-size: 17px;
+    text-align: end;
+  }
 }

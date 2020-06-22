@@ -21,7 +21,7 @@ class App extends React.Component {
 
   setBg(bg) {
     return {
-      background: `linear-gradient(rgba(255, 255, 255, .3), rgba(255, 255, 255, .3)), url(${bg}) center / contain no-repeat #fff`,
+      background: `linear-gradient(rgba(255, 255, 255, .3), rgba(255, 255, 255, .3)), url(${bg}) center / 700px no-repeat #fff`,
     } 
   }
 
