@@ -32,7 +32,7 @@ class Container extends React.Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="Container">
                 < Quote 
                     quote={ this.state.currentQuote } 
                     author={ this.state.currentAuthor } 

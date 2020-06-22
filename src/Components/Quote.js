@@ -3,8 +3,8 @@ import React from 'react'
 function Quote(props) {
     return (
         <div>
-            <h1>{ props.quote}"` }</h1>
-            <h2>{ `-${props.author}`}</h2>
+            <h1>{ props.quote}</h1>
+            <h2>{ `- ${props.author}`}</h2>
         </div>
     )
 }
