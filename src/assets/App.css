@@ -4,11 +4,8 @@
   width: 60%;
   min-width: 500px;
   min-height: 750px;
-  background-image: url(./images/23056.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: white;  
+  
+
   margin: 4% auto;
   display: flex;
   justify-content: center;
@@ -17,5 +14,40 @@
 }
 
 .Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Container button {
+  width: 130px;
+  height: 40px;
+  margin: 0 auto;
+  border: solid 2px black;
+  background-color: transparent;
+}
+
+.Container button:hover {
+  cursor: pointer;
+}
+
+.Quote {
   font-family: 'The Girl Next Door', cursive;
+  text-align: center;
+  min-width: 60%;
+  margin: 0 auto;
+  height: 500px;
+  width: 500px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.Quote h1 {
+  font-size: 40px;
+}
+
+.Quote h2 {
+  font-size: 21px;
+  text-align: end;
 }

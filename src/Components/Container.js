@@ -6,6 +6,7 @@ class Container extends React.Component {
     constructor() {
         super()
         this.state = {
+            btnText: "Start!",
             quotes: "",
             currentQuote: "Lift me up!",
             currentAuthor: "by Bruna Genz"
@@ -26,8 +27,11 @@ class Container extends React.Component {
         
         this.setState({
             currentQuote: `"${this.state.quotes[index].quote}"`,
-            currentAuthor: this.state.quotes[index].author
+            currentAuthor: this.state.quotes[index].author,
+            btnText: "Lift me more!"
         })
+
+        this.props.onUpdate()
     }
 
     render() {
@@ -37,7 +41,7 @@ class Container extends React.Component {
                     quote={ this.state.currentQuote } 
                     author={ this.state.currentAuthor } 
                 />
-                < Button onClick={this.getQuotes}/>
+                < Button text={this.state.btnText} onClick={this.getQuotes}/>
             </div>
         )
     }
